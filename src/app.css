@@ -1,5 +1,39 @@
-@import url('/static/fonts/open-sans.css');
+@import url('/static/fonts/open-sans.css') layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/forms';
+
+@theme {
+	--font-*: initial;
+	--font-sans: Open Sans, sans-serif, system-ui;
+	--font-serif: ui-serif, Georgia;
+	--font-mono: ui-monospace, SFMono-Regular;
+
+	--color-theme-blue: #449fe0;
+	--color-theme-green: #5dc93b;
+
+	--color-theme-magenta-50: #ffe5f4;
+	--color-theme-magenta: #d23085;
+
+	--color-theme-yellow: #f19938;
+	--color-theme-purple: #270937;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentcolor);
+	}
+}

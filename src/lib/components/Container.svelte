@@ -14,7 +14,7 @@
 	let { image = undefined, color, left, right }: Props = $props();
 </script>
 
-<main class="grid flex-grow grid-cols-1 xl:grid-cols-2">
+<main class="grid grow grid-cols-1 xl:grid-cols-2">
 	<div class="flex w-full flex-col gap-5 px-14 pt-10 lg:px-24">
 		{@render left?.()}
 	</div>

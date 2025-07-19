@@ -1,8 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { configDefaults, type UserConfig } from 'vitest/config';
+import tailwindcss from '@tailwindcss/vite';
+import { configDefaults, type ViteUserConfig } from 'vitest/config';
 
-const config: UserConfig = {
-	plugins: [sveltekit()],
+const config: ViteUserConfig = {
+	plugins: [sveltekit(), tailwindcss()],
 	test: {
 		exclude: [...configDefaults.exclude, 'tests/**']
 	}

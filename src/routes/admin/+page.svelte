@@ -18,11 +18,12 @@
 		<div class="flex flex-col">
 			<h1>Actions</h1>
 			<!-- <form action="?/reminder" method="POST">
-				<button class="rounded border-2 px-2 py-1" type="submit">Send verification reminder</button>
+				<button class="rounded-sm border-2 px-2 py-1" type="submit">Send verification reminder</button>
 			</form> -->
 			<form action="?/paymentReminder" method="POST" class="flex flex-col">
 				<input type="text" name="emails" placeholder="Emails" />
-				<button class="rounded border-2 px-2 py-1" type="submit">Send Payment Reminder Email</button
+				<button class="rounded-sm border-2 px-2 py-1" type="submit"
+					>Send Payment Reminder Email</button
 				>
 			</form>
 		</div>
@@ -31,10 +32,10 @@
 			<a
 				href="/admin/csv-download?header=name,email,address,zip_city,type,choir,voice,departure,state,notes,price,gym,diet,confirmation_id"
 			>
-				<button class="rounded border-2 px-2 py-1">Full Data</button>
+				<button class="rounded-sm border-2 px-2 py-1">Full Data</button>
 			</a>
 			<a href="/admin/csv-download?header=name,type,choir">
-				<button class="rounded border-2 px-2 py-1">Names</button>
+				<button class="rounded-sm border-2 px-2 py-1">Names</button>
 			</a>
 		</details>
 		<details>

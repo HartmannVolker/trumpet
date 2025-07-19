@@ -36,5 +36,5 @@
 		<Countdown targetDate={new Date('2023-05-26')} />
 	</div>
 </main>
-<div class="flex-grow"></div>
+<div class="grow"></div>
 <Footer />
