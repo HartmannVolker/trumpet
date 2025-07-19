@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const sortedChoirs = Object.keys(data.distribution).sort(
 		(a, b) => data.distribution[b].total - data.distribution[a].total
 	);
@@ -14,11 +18,12 @@
 		<div class="flex flex-col">
 			<h1>Actions</h1>
 			<!-- <form action="?/reminder" method="POST">
-				<button class="rounded border-2 px-2 py-1" type="submit">Send verification reminder</button>
+				<button class="rounded-sm border-2 px-2 py-1" type="submit">Send verification reminder</button>
 			</form> -->
 			<form action="?/paymentReminder" method="POST" class="flex flex-col">
 				<input type="text" name="emails" placeholder="Emails" />
-				<button class="rounded border-2 px-2 py-1" type="submit">Send Payment Reminder Email</button
+				<button class="rounded-sm border-2 px-2 py-1" type="submit"
+					>Send Payment Reminder Email</button
 				>
 			</form>
 		</div>
@@ -27,17 +32,17 @@
 			<a
 				href="/admin/csv-download?header=name,email,address,zip_city,type,choir,voice,departure,state,notes,price,gym,diet,confirmation_id"
 			>
-				<button class="rounded border-2 px-2 py-1">Full Data</button>
+				<button class="rounded-sm border-2 px-2 py-1">Full Data</button>
 			</a>
 			<a href="/admin/csv-download?header=name,type,choir">
-				<button class="rounded border-2 px-2 py-1">Names</button>
+				<button class="rounded-sm border-2 px-2 py-1">Names</button>
 			</a>
 		</details>
 		<details>
 			<summary>Chor Verteilung</summary>
-			{#each sortedChoirs as choir}
+			{#each sortedChoirs as choir (choir)}
 				<h2 class="mt-4 text-lg">{choir}</h2>
-				{#each voices as voice}
+				{#each voices as voice (voice)}
 					<span class="mx-2">{voice}: {data.distribution[choir][voice]} </span>
 				{/each}
 			{/each}
@@ -45,7 +50,7 @@
 		<details>
 			<summary>Preis Übersicht</summary>
 			<div class="flex flex-col">
-				{#each Object.keys(data.prices) as price}
+				{#each Object.keys(data.prices) as price (price)}
 					<span class="mx-2">{price}: {data.prices[price]} </span>
 				{/each}
 			</div>

@@ -15,19 +15,19 @@
 
 <div class="glide">
 	<div data-glide-el="track" class="glide__track">
-		<div class="glide__slides h-[16rem] md:h-[50vw]">
-			{#each images as image}
-				<img class={`object-cover`} src={image.src} alt={image.alt} />
+		<div class="glide__slides h-64 md:h-[50vw]">
+			{#each images as image (image.src)}
+				<img class="object-cover" src={image.src} alt={image.alt} />
 			{/each}
 		</div>
 		<div class="glide__bullets" data-glide-el="controls[nav]">
 			<!-- eslint-disable @typescript-eslint/no-unused-vars -->
-			{#each images as _, i}
+			{#each images as _, i (i)}
 				<button
 					class="slider_bullet glide__bullet"
 					data-glide-dir={`=${i}`}
 					aria-label={`Bild ${i + 1}`}
-				/>
+				></button>
 			{/each}
 		</div>
 	</div>

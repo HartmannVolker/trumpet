@@ -240,6 +240,7 @@
 <Footer />
 
 <style lang="postcss">
+	@reference "../../app.css";
 	p {
 		@apply my-1;
 	}

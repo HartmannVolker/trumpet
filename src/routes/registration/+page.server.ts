@@ -38,6 +38,7 @@ export const actions: Actions = {
 		try {
 			if (!dev) await verifyCaptcha(userData['frc-captcha-solution'] as string);
 		} catch (e) {
+			console.error('registration_captcha_error', e);
 			return fail(400, {
 				success: false,
 				message: 'Etwas stimmt nicht. Bitte versuch es erneut oder melde dich bei uns.'

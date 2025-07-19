@@ -1,12 +1,16 @@
 <script lang="ts">
 	import type { Image } from '$lib/utils/images';
 
-	export let image: Image | undefined = undefined;
+	interface Props {
+		image?: Image | undefined;
+	}
+
+	let { image = undefined }: Props = $props();
 </script>
 
 <footer>
 	{#if image}
-		<img class="aspect-[16/6] w-full object-cover object-bottom" src={image.src} alt={image.alt} />
+		<img class="aspect-16/6 w-full object-cover object-bottom" src={image.src} alt={image.alt} />
 	{/if}
 	<div class="flex flex-col items-center gap-5 bg-theme-purple py-10 text-white">
 		<div class="mx-5 grid grid-cols-2 justify-center gap-5 font-bold md:grid-cols-4">
