@@ -18,7 +18,7 @@
 	/>
 </svelte:head>
 
-{#if navigating}
+{#if navigating.to}
 	<div class="fixed top-0 z-50 h-[5px] w-screen">
 		<LoadingHorizontal />
 	</div>
