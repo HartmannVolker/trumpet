@@ -24,7 +24,7 @@
 	<span class={`text-white ${required ? "after:ml-1 after:content-['*']" : ''}`}>{label}</span>
 	<select {name} bind:value {required}>
 		<option value="">-- Bitte wählen --</option>
-		{#each values as { label, value: v }}
+		{#each values as { label, value: v } (label)}
 			<option value={v}>{label}</option>
 		{/each}
 	</select>

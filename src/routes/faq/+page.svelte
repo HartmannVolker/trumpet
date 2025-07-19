@@ -18,7 +18,7 @@
 	{#snippet left()}
 		{#if children}{@render children()}{:else}
 			<img alt="Bär mit Trompete" src="/bear_blue.svg" width="200" height="200" />
-			<Header color={'blue'} title="Fragen und Antworten" subTitle="Alle Informationen" />
+			<Header color="blue" title="Fragen und Antworten" subTitle="Alle Informationen" />
 			<div class="my-8 flex flex-col">
 				<Faq question="Wann findet das Bläsertreffen statt?">
 					Fr. 26.05.2023 (Anreise) bis Mo. 29.05.2023 (Abreise)

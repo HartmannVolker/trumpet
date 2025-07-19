@@ -39,9 +39,9 @@
 		</details>
 		<details>
 			<summary>Chor Verteilung</summary>
-			{#each sortedChoirs as choir}
+			{#each sortedChoirs as choir (choir)}
 				<h2 class="mt-4 text-lg">{choir}</h2>
-				{#each voices as voice}
+				{#each voices as voice (voice)}
 					<span class="mx-2">{voice}: {data.distribution[choir][voice]} </span>
 				{/each}
 			{/each}
@@ -49,7 +49,7 @@
 		<details>
 			<summary>Preis Übersicht</summary>
 			<div class="flex flex-col">
-				{#each Object.keys(data.prices) as price}
+				{#each Object.keys(data.prices) as price (price)}
 					<span class="mx-2">{price}: {data.prices[price]} </span>
 				{/each}
 			</div>

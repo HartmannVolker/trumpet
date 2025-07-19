@@ -115,7 +115,7 @@
 	{#snippet left()}
 		{#if children}{@render children()}{:else}
 			<img alt="Bär mit Waldhorn" src="/bear-magenta.svg" width="200" height="200" />
-			<Header title="Wo kann ich schlafen?" subTitle="Alle Informationen" color={'magenta'} />
+			<Header title="Wo kann ich schlafen?" subTitle="Alle Informationen" color="magenta" />
 
 			<p class="hyphen text-justify font-semibold">
 				Für das Bläsertreffen 2023 in Berlin wird es eine entscheidende Neuerung geben: Wir bitten
@@ -137,7 +137,7 @@
 				Hier einige Links zu möglichen Unterkünften in der Nähe:
 			</p>
 			<div class="flex max-h-64 min-h-[400px] flex-col gap-5 overflow-y-auto">
-				{#each hotels as hotel}
+				{#each hotels as hotel (hotel.name)}
 					<HotelCard {hotel} />
 				{/each}
 			</div>

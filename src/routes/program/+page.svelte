@@ -22,7 +22,7 @@
 				Hierbei handelt es sich um ein vorläufiges Programm, um eine grobe Orientierung zu geben.
 				Bis zum Bläsertreffen werdet ihr hier immer neue Informationen finden.
 			</p>
-			<Header color={'green'} title="Freitag" subTitle="26.05.2023" />
+			<Header color="green" title="Freitag" subTitle="26.05.2023" />
 			<Timetable
 				data={[
 					{ time: '16:00 Uhr', label: 'Anreise' },
@@ -31,7 +31,7 @@
 					{ time: 'anschl.', label: 'gemütliches Beisammensein' }
 				]}
 			/>
-			<Header color={'green'} title="Samstag" subTitle="27.05.2023" />
+			<Header color="green" title="Samstag" subTitle="27.05.2023" />
 			<Timetable
 				data={[
 					{ time: '08:45 Uhr', label: 'Morgensegen' },

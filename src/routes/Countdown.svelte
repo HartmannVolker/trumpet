@@ -14,5 +14,5 @@
 </script>
 
 {#if number > 0}
-	<FramedNumber title={'Tage bis Beginn'} {number} />
+	<FramedNumber title="Tage bis Beginn" {number} />
 {/if}

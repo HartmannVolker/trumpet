@@ -176,7 +176,7 @@
 				Hier einige Links zu möglichen Unterkünften in der Nähe:
 			</p>
 			<div class="flex max-h-64 min-h-[800px] flex-col gap-5 overflow-y-auto">
-				{#each hotels as hotel}
+				{#each hotels as hotel (hotel.name)}
 					<HotelCard {hotel} />
 				{/each}
 			</div>
