@@ -16,17 +16,10 @@
 
 <main class="flex flex-col items-center">
 	<Landing />
-	<div class="mt-5 grid grid-cols-2 gap-5 md:mt-10 md:grid-cols-4 md:gap-[4vw]">
+	<div class="mt-5 grid grid-cols-2 gap-5 md:mt-10 md:grid-cols-3 md:gap-[4vw]">
 		<Link href="/information" header="Details" subHeader="alle Informationen" color="magenta" />
 		<Link href="/faq" header="Häufige Fragen" subHeader="und die Antworten" color="blue" />
 		<Link href="/program" header="Programm" subHeader="Was, Wann und Wo" color="green" />
-		<Link
-			target="_blank"
-			href="https://docs.google.com/viewer?url=https%3A%2F%2Fblaesertag2023.de%2Ffestschrift.pdf&embedded=true"
-			header="Festschrift"
-			subHeader="zum Bläsertag"
-			color="yellow"
-		/>
 	</div>
 	<div class="h-full w-full p-3 md:mt-10 md:p-10 md:py-14 xl:w-2/3">
 		<Orchestra orchestraDistribution={data.orchestraDistribution} />
