@@ -65,7 +65,7 @@
 	<a
 		href={hotel.website}
 		target="_blank"
-		rel="noopener noreferrer"
+		rel="noopener noreferrer external"
 		aria-label="Link to {hotel.name}"
 	>
 		<svg

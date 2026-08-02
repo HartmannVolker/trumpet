@@ -2,6 +2,7 @@
 	import type { ThemeColor } from '$lib/types/colors';
 	import { getTextColorClass } from '$lib/utils/color-classes';
 	import ArrowUp from './ArrowUp.svelte';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		title: string;
@@ -14,7 +15,7 @@
 </script>
 
 <div class="relative -mx-14 font-bold lg:-mx-24">
-	<a href={link}>
+	<a href={resolve(link)}>
 		<ArrowUp
 			clazz={`absolute w-[40px] lg:w-[80px] h-[40px] lg:h-[80px] top-1/2 left-0 -translate-y-1/2 ${
 				color ? getTextColorClass(color) : 'text-white'

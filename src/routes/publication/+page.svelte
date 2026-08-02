@@ -1,3 +1,7 @@
+<script>
+	import { resolve } from '$app/paths';
+</script>
+
 <object
 	class="h-screen"
 	title="Festschrift Bläsertag 2023 Berlin"
@@ -8,7 +12,7 @@
 >
 	<p>
 		It appears you don't have a PDF plugin for this browser. No biggie... you can <a
-			href="/festschrift.pdf">click here to download the PDF file.</a
+			href={resolve('/festschrift.pdf')}>click here to download the PDF file.</a
 		>
 	</p>
 </object>

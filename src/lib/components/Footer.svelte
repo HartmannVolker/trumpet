@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Image } from '$lib/utils/images';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		image?: Image | undefined;
@@ -17,7 +18,7 @@
 			<a class="text-center" href="mailto:info@blaesertag2023.de"> Kontakt </a>
 			<a class="text-center" href="https://www.herrnhuter-in-berlin.de/"> Brüdergemeine Berlin </a>
 			<a class="text-center" href="https://www.herrnhuter-in-berlin.de/impressum"> Impressum </a>
-			<a class="text-center" href="/data-protection"> Datenschutz </a>
+			<a class="text-center" href={resolve('/data-protection')}> Datenschutz </a>
 		</div>
 		<span class="text-sm">© 2022 Evangelische Brüdergemeine Berlin </span>
 	</div>

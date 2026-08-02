@@ -2,6 +2,7 @@
 	import type { ThemeColor } from '$lib/types/colors';
 	import { getBgColorClass } from '$lib/utils/color-classes';
 	import ArrowUp from '../lib/components/ArrowUp.svelte';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		header: string;
@@ -15,7 +16,7 @@
 </script>
 
 <a
-	{href}
+	href={resolve(href)}
 	{target}
 	class={`relative flex h-36 w-36 flex-col justify-end p-2 py-6 text-white md:h-[20vw] md:w-[20vw] md:p-[1vw] md:py-[2vw] ${getBgColorClass(
 		color
