@@ -6,9 +6,13 @@ import ts from 'typescript-eslint';
 import svelteConfig from './svelte.config.js';
 
 export default ts.config(
+	{ ignores: ['.svelte-kit/', 'build/', 'package/'] },
+
 	js.configs.recommended,
 	...ts.configs.recommended,
-	...svelte.configs.recommended,
+	...svelte.configs['flat/recommended'], // Ensure you use the 'flat' export for the Svelte plugin
+
+	// 3. Global Variables
 	{
 		languageOptions: {
 			globals: {
@@ -17,22 +21,25 @@ export default ts.config(
 			}
 		}
 	},
+
+	// 4. Svelte-specific Parsing
 	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 		languageOptions: {
 			parserOptions: {
-				projectService: true,
-				extraFileExtensions: ['.svelte'], // Add support for additional file extensions, such as .svelte
+				projectService: true, // Requires typescript-eslint v8+
+				extraFileExtensions: ['.svelte'],
 				parser: ts.parser,
 				svelteConfig
 			}
 		}
 	},
+
+	// 5. Custom Rule Overrides
 	{
 		rules: {
 			// Override or add rule settings here, such as:
-			// 'svelte/rule-name': 'error'
+			// 'svelte/valid-compile': 'error'
 		}
-	},
-	{ ignores: ['.svelte-kit', 'build', 'package'] }
+	}
 );
