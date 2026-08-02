@@ -3,7 +3,6 @@
 	import FramedNumber from '$lib/components/FramedNumber.svelte';
 	import Orchestra from '$lib/components/orchestra/Orchestra.svelte';
 	import type { PageData } from './$types';
-	import Countdown from './Countdown.svelte';
 	import Landing from './Landing.svelte';
 	import Link from './Link.svelte';
 
@@ -26,7 +25,6 @@
 	</div>
 	<div class="mb-5 flex flex-col gap-5 md:flex-row">
 		<FramedNumber title="Anmeldungen" number={data.registrationCount} />
-		<Countdown targetDate={new Date('2023-05-26')} />
 	</div>
 </main>
 <div class="grow"></div>
